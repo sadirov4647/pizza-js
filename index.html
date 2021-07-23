@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js</title>
+  <link rel="stylesheet" href="/pizza.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="pizza-title">Pitsa buyurtma qilish</h1>
+    <div class="pizza-wrapper">
+      <div class="features-side">
+        <div class="pizza-option">
+          <label for="pizza-select">Pitsa qanday bolsin?</label>
+          <select class="pizza-select" name="" id="pizza-select">
+            <option value="yupqa">Yupqa</option>
+            <option value="qalin">Qalin</option>
+            <option value="buxanka">Buxanka</option>
+          </select>
+        </div>
+        
+        <div class="pizza-size">
+          <h2 class="pizza-size__title">Kattaligi</h2>
+          <button class="size-button">25cm</button>
+          <button class="size-button">30</button>
+          <button class="size-button">35</button>
+        </div>
+        
+        <div class="onpizza">
+          <h2 class="onpizza-title">Ustiga nima solaylik</h2>
+          <ul class="onpizza_list">
+            <div class="onpizza-left">
+              <li class="onpizza_item">
+                <label class="onpizza-label" for="pomidor"><input value="pomidor" class="onpizza-checks" type="checkbox" id="pomidor">Pomidor
+                </label>
+              </li>
+              
+              <li class="onpizza_item">
+                <label class="onpizza-label" for="kurka"><input value="kurka" class="onpizza-checks" type="checkbox" id="kurka">Kurka
+                </label>
+              </li>
+              
+              <li class="onpizza_item">
+                <label class="onpizza-label" for="zaytun"><input value="zaytun" class="onpizza-checks" type="checkbox" id="zaytun">Zaytun
+                </label>
+              </li>
+            </div>
+            
+            <div class="onpizza-right">
+              <li class="onpizza_item">
+                <label class="onpizza-label" for="bodring"><input value="bodring" class="onpizza-checks" type="checkbox" id="bodring">Tuzlangan bodring
+                </label>
+              </li>
+              
+              <li class="onpizza_item">
+                <label class="onpizza-label" for="qoziqorin"><input value="qoziqorin" class="onpizza-checks" type="checkbox" id="qoziqorin">Qoziqorin
+                </label>
+              </li>
+              
+              <li class="onpizza_item">
+                <label class="onpizza-label" for="qazi"><input value="qazi" class="onpizza-checks" type="checkbox" id="qazi">Qazi
+                </label>
+              </li>
+            </div>
+          </ul>
+        </div>
+        
+        <div class="again">
+          <h2 class="again-title">Qoshimchalar</h2>
+          <ul class="again_list">
+            <li class="again_item">
+              <input value="sosiska" class="again-check" type="checkbox" id="achchiq">
+              <label for="achchiq">Achchiq</label>
+            </li>
+            <li class="again_item">
+              <input value="sosiska" class="again-check" class="onpizza-checks" type="checkbox" id="sosiska">
+              <label for="sosiska">Sosiska</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="booking-side">
+        <form action="">
+          <div class="bread-sort">
+            <h3>Non:</h3>
+            <span class="bread-sort__choose"></span>
+          </div>
+          
+          <div class="pizza-book__height">
+            <h3>Kattaligi</h3>
+            <span class="pizza-book__height-choose"></span>
+          </div>
+          
+          <div class="onpizza__book">
+            <h2 class="onpizza__book-title">Ustida</h2>
+            <ul class="onpizza_book-list">
+              
+            </ul>
+          </div>
+          
+          <div class="book-again">
+            <h3 class="book-again__title">Qoshimchalar</h3>
+            <ul class="book-again_list">
+              
+            </ul>
+          </div>
+          
+          <button class="book-btn">Buyurtma berish</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script src="/pizza.js"></script>
+</body>
+
+</html>

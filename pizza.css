@@ -1,0 +1,58 @@
+.container{
+    max-width: 1140px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pizza-title{
+    text-align: center;
+}
+.pizza-wrapper{
+    display: flex;
+}
+.booking-side{
+    padding-left: 50px;
+}
+.features-side{
+    max-width: 60%;
+    padding-right: 50px;
+    border-right: 2px solid black;
+}
+.pizza-size button{
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 20px;
+    border: 1px solid #f2f2f2;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.onpizza_list{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.again_list{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.book-btn{
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.book-btn:hover{
+    background-color: #fff;
+    color: crimson;
+    border: 1px solid crimson;
+}
