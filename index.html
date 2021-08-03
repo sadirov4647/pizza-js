@@ -8,7 +8,6 @@
   <title>js</title>
   <link rel="stylesheet" href="/pizza.css">
 </head>
-<div class="test"></div>
 <body>
   <div class="container">
     <h1>Nima buyurtma qilamiz</h1>
@@ -44,22 +43,41 @@
             </label>
           </fieldset>
         </div>
-
+        
         <div class="pizza-form__group">
-          <fieldset>
+          <fieldset class="pizza-form__toppings">
             <legend>Ustiga nima solaylik</legend>
-            <label class="checkbox">
-              <input class="checkbox-input visually-hidden" type="checkbox" name="pomidor">
-              <span class="checkbox-control">Pomidor</span>
-            </label>
           </fieldset>
         </div>
-        
       </div>
     </form>
   </div>
   
   
+  
+  
+  
+  
+  
+  
+  <template class="pizza-type-option-template">
+    <option value=""></option>
+  </template>
+  
+  
+  <template class="pizza-size-radio-template">
+    <label class="radio">
+      <input class="radio-input visually-hidden" type="radio" name="size" value="">
+      <span class="radio__control"> cm</span>
+    </label>
+  </template>
+  
+  <template class="pizza-topping-checkbox-template">
+    <label class="checkbox">
+      <input class="checkbox-input visually-hidden" type="checkbox" name="">
+      <span class="checkbox-control"></span>
+    </label>
+  </template>
   <script src="/pizza.js"></script>
 </body>
 
