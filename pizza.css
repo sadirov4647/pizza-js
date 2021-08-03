@@ -1,58 +1,70 @@
+/* General */
+html{
+    box-sizing: border-box;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #fff;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 8px;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 .container{
-    max-width: 1140px;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 100%;
+    max-width: 900px;
+    padding-left: 50px;
+    padding-right: 50px;
     margin-left: auto;
     margin-right: auto;
 }
-.pizza-title{
-    text-align: center;
-}
-.pizza-wrapper{
-    display: flex;
-}
-.booking-side{
-    padding-left: 50px;
-}
-.features-side{
-    max-width: 60%;
-    padding-right: 50px;
-    border-right: 2px solid black;
-}
-.pizza-size button{
-    background-color: transparent;
+.radio__control{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
     border-radius: 50%;
-    padding: 20px;
-    border: 1px solid #f2f2f2;
-    margin-right: 30px;
-    cursor: pointer;
 }
-.onpizza_list{
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.radio-input:checked ~ .radio__control{
+    background-color: tomato;
 }
-.again_list{
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.checkbox-control{
+    display: inline-flex;
+    align-items: center;
 }
-.book-btn{
-    background-color: crimson;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    cursor: pointer;
+.checkbox-control::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid #000;
 }
-.book-btn:hover{
-    background-color: #fff;
-    color: crimson;
-    border: 1px solid crimson;
+.checkbox-input:checked ~ .checkbox-control::before{
+    background-color:tomato;
 }
