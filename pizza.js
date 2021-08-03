@@ -45,16 +45,20 @@ let pizzaOptions = {
             price:5000
         },
         {
-            name:"Pomidor",
-            price:4000
+            name:"Qazi",
+            price:15000
         },
         {
-            name:"Pomidor",
-            price:4000
+            name:"Kurka goshti",
+            price:12000
         },
         {
-            name:"Pomidor",
-            price:4000
+            name:"Zaytun",
+            price:5000
+        },
+        {
+            name:"Qo'ziqorin",
+            price:7000
         }
     ],
     addl:[
@@ -78,7 +82,8 @@ function createToppingCheckbox(topping){
 
 
 // Option ichidagi topping qiymatlari checkbozlarini sahifaga joylash
-
+var elToppingsFragment = document.createDocumentFragment();
 pizzaOptions.toppings.forEach(function(topping){
-   elPizzaToppings.appendChild(createToppingCheckbox(topping));
+    elToppingsFragment.appendChild(createToppingCheckbox(topping));
 });
+elPizzaToppings.appendChild(elToppingsFragment);

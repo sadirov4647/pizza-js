@@ -54,6 +54,11 @@ img{
 .radio-input:checked ~ .radio__control{
     background-color: tomato;
 }
+.checkbox,
+.radio{
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
 .checkbox-control{
     display: inline-flex;
     align-items: center;
