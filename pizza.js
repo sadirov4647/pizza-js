@@ -75,6 +75,9 @@ var elPizzaToppingCheckboxTemplate = document.querySelector('.pizza-topping-chec
 
 var elPizzaForm = document.querySelector('.pizza-form');
 var elPizzaToppings = elPizzaForm.querySelector('.pizza-form__toppings');
+var elPizzaSizes = elPizzaForm.querySelector('.pizza-form__size');
+
+// input size object {size, name, price} output = HTML element
 
 function createSizeRadio(size){
     var elSizeRadio = elPizzaSizeRadioTemplate.clonenode(true);
@@ -101,7 +104,8 @@ function showPizzaSizeRadios(){
         return a.size - b.size;
     }).forEach(function (size){
         elSizeRadiosFragment.appendChild(createSizeRadio(size));
-    })
+    });
+    elPizzaSizes(appendChild(elSizeRadiosFragment));
 }
 
 function showPizzaToppings(){
@@ -122,6 +126,7 @@ function showPizzaToppings(){
     });
     elPizzaToppings.appendChild(elToppingsFragment); 
 }
-showPizzaToppings()
+showPizzaSizeRadios();
+showPizzaToppings();
 
 
