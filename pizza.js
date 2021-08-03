@@ -15,11 +15,6 @@ let pizzaOptions = {
     ],
     sizes:[
         {
-            name:"Kichik",
-            size:25,
-            price:25000
-        },
-        {
             name:"O'rtacha",
             size:30,
             price:30000
@@ -28,6 +23,11 @@ let pizzaOptions = {
             name:"Katta",
             size:35,
             price:45000
+        },
+        {
+            name:"Kichik",
+            size:25,
+            price:25000
         },
         {
             name:"Oilaviy",
@@ -69,9 +69,20 @@ let pizzaOptions = {
     ]
 }
 
-var elPizzaToppingCheckboxTemplate = document.querySelector('.pizza-topping-checkbox-template').content;
+var elPizzaSizeRadioTemplate = document.querySelector('.pizza-size-radio-template').content;
+var elPizzaToppingCheckboxTemplate = document.querySelector('.pizza-topping-chechbox-template').content;
+
+
 var elPizzaForm = document.querySelector('.pizza-form');
-var elPizzaToppings = elPizzaForm.querySelector('.pizza-form__toppings')
+var elPizzaToppings = elPizzaForm.querySelector('.pizza-form__toppings');
+
+function createSizeRadio(size){
+    var elSizeRadio = elPizzaSizeRadioTemplate.clonenode(true);
+    elSizeRadio.querySelector('.radio-input').value = size.size;
+    elSizeRadio.querySelector('.radio__control').textContent = size.name;
+
+    return elSizeRadio;
+}
 
 function createToppingCheckbox(topping){
     var elToppingCheckbox = elPizzaToppingCheckboxTemplate.cloneNode(true);
@@ -80,10 +91,37 @@ function createToppingCheckbox(topping){
     return elToppingCheckbox;
 }
 
-
 // Option ichidagi topping qiymatlari checkbozlarini sahifaga joylash
-var elToppingsFragment = document.createDocumentFragment();
-pizzaOptions.toppings.forEach(function(topping){
-    elToppingsFragment.appendChild(createToppingCheckbox(topping));
-});
-elPizzaToppings.appendChild(elToppingsFragment);
+function showPizzaSizeRadios(){
+    var elSizeRadiosFragment =  document.createDocumentFragment();
+
+    pizzaOptions.sizes.
+    slice().
+    sort(function (a, b){
+        return a.size - b.size;
+    }).forEach(function (size){
+        elSizeRadiosFragment.appendChild(createSizeRadio(size));
+    })
+}
+
+function showPizzaToppings(){
+    var elToppingsFragment = document.createDocumentFragment();
+    pizzaOptions.toppings.
+    slice().
+    sort(function (a, b){
+        if(a.name > b.name) {
+            return 1
+        }
+        if(a.name < b.name){
+            return -1
+        }
+        return 0
+    }).
+    forEach(function(topping){
+        elToppingsFragment.appendChild(createToppingCheckbox(topping));
+    });
+    elPizzaToppings.appendChild(elToppingsFragment); 
+}
+showPizzaToppings()
+
+
