@@ -130,3 +130,15 @@ showPizzaSizeRadios();
 showPizzaToppings();
 
 
+
+var elsSizeRadio = document.querySelectorAll('.radio-input');
+
+if(elsSizeRadio.length > 0){
+    elsSizeRadio.forEach(function(radio){
+      radio.addEventListener('change', function(){
+          console.log(radio.value)
+      })
+    })
+}
+
+
