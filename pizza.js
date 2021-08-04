@@ -70,7 +70,7 @@ let pizzaOptions = {
 }
 
 var elPizzaSizeRadioTemplate = document.querySelector('.pizza-size-radio-template').content;
-var elPizzaToppingCheckboxTemplate = document.querySelector('.pizza-topping-chechbox-template').content;
+var elPizzaToppingCheckboxTemplate = document.querySelector('.pizza-topping-checkbox-template').content;
 
 
 var elPizzaForm = document.querySelector('.pizza-form');
@@ -80,19 +80,13 @@ var elPizzaSizes = elPizzaForm.querySelector('.pizza-form__size');
 // input size object {size, name, price} output = HTML element
 
 function createSizeRadio(size){
-    var elSizeRadio = elPizzaSizeRadioTemplate.clonenode(true);
+    var elSizeRadio = elPizzaSizeRadioTemplate.cloneNode(true);
     elSizeRadio.querySelector('.radio-input').value = size.size;
-    elSizeRadio.querySelector('.radio__control').textContent = size.name;
+    elSizeRadio.querySelector('.radio__control').textContent = size.name + '' + size.size + '' + ' cm';
 
     return elSizeRadio;
 }
 
-function createToppingCheckbox(topping){
-    var elToppingCheckbox = elPizzaToppingCheckboxTemplate.cloneNode(true);
-    elToppingCheckbox.querySelector('.checkbox-input').name = topping.name;
-    elToppingCheckbox.querySelector('.checkbox-control').textContent = topping.name;
-    return elToppingCheckbox;
-}
 
 // Option ichidagi topping qiymatlari checkbozlarini sahifaga joylash
 function showPizzaSizeRadios(){
@@ -105,8 +99,18 @@ function showPizzaSizeRadios(){
     }).forEach(function (size){
         elSizeRadiosFragment.appendChild(createSizeRadio(size));
     });
-    elPizzaSizes(appendChild(elSizeRadiosFragment));
+    elPizzaSizes.appendChild(elSizeRadiosFragment);
 }
+
+
+
+function createToppingCheckbox(topping){
+    var elToppingCheckbox = elPizzaToppingCheckboxTemplate.cloneNode(true);
+    elToppingCheckbox.querySelector('.checkbox-input').name = topping.name;
+    elToppingCheckbox.querySelector('.checkbox-control').textContent = topping.name;
+    return elToppingCheckbox;
+}
+
 
 function showPizzaToppings(){
     var elToppingsFragment = document.createDocumentFragment();
