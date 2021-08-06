@@ -84,3 +84,9 @@ html {
   .checkbox__input:checked ~ .checkbox__control::before {
     background-color: tomato;
   }
+  .pizza-form{
+    display: flex;
+  }
+  .pizza-form__fields{
+    margin-right: 20px;
+  }
